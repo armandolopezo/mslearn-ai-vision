@@ -37,15 +37,16 @@ def main():
         with open(image_file, "rb") as f:
             image_data = f.read()
         print(f'\nAnalyzing {image_file}\n')
-         result = cv_client.analyze(
-     image_data=image_data,
-     visual_features=[
-         VisualFeatures.CAPTION,
-         VisualFeatures.DENSE_CAPTIONS,
-         VisualFeatures.TAGS,
-         VisualFeatures.OBJECTS,
-         VisualFeatures.PEOPLE],
- )
+
+        result = cv_client.analyze(
+            image_data=image_data,
+            visual_features=[
+                VisualFeatures.CAPTION,
+                VisualFeatures.DENSE_CAPTIONS,
+                VisualFeatures.TAGS,
+                VisualFeatures.OBJECTS,
+                VisualFeatures.PEOPLE],
+)
 
         # Get image captions
         
