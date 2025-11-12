@@ -49,16 +49,16 @@ def main():
 )
 
         # Get image captions
-         if result.caption is not None:
+        if result.caption is not None:
             print("\nCaption:")
             print(" Caption: '{}' (confidence: {:.2f}%)".format(result.caption.text, 
             result.caption.confidence * 100))
                 
-if result.dense_captions is not None:
-     print("\nDense Captions:")
-     for caption in result.dense_captions.list:
-        print(" Caption: '{}' (confidence: {:.2f}%)".format(caption.text, 
-        caption.confidence * 100))
+        if result.dense_captions is not None:
+            print("\nDense Captions:")
+            for caption in result.dense_captions.list:
+                print(" Caption: '{}' (confidence: {:.2f}%)".format(caption.text, 
+                caption.confidence * 100))
         
 
         # Get image tags
