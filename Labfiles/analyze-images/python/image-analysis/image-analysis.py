@@ -29,7 +29,9 @@ def main():
         
 
         # Authenticate Azure AI Vision client
-
+        cv_client = ImageAnalysisClient(
+        endpoint=ai_endpoint,
+        credential=AzureKeyCredential(ai_key))
 
         # Analyze image
 
