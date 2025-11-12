@@ -34,7 +34,9 @@ def main():
         credential=AzureKeyCredential(ai_key))
 
         # Analyze image
-
+        with open(image_file, "rb") as f:
+            image_data = f.read()
+        print(f'\nAnalyzing {image_file}\n')
 
         # Get image captions
         
