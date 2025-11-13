@@ -55,8 +55,11 @@ def main():
                 face_count += 1
                 print('\nFace number {}'.format(face_count))
                 print(' - Head Pose (Yaw): {}'.format(face.face_attributes.head_pose.yaw))
+                # YAW is the left-right rotation of the head
                 print(' - Head Pose (Pitch): {}'.format(face.face_attributes.head_pose.pitch))
+                #PITCH is the up-down rotation of the head
                 print(' - Head Pose (Roll): {}'.format(face.face_attributes.head_pose.roll))
+                # ROLL is the tilt of the head
                 print(' - Forehead occluded?: 
         {}'.format(face.face_attributes.occlusion["foreheadOccluded"]))
                 print(' - Eye occluded?: 
