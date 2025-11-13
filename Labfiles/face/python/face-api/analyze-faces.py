@@ -5,7 +5,10 @@ from PIL import Image, ImageDraw
 from matplotlib import pyplot as plt
 
 # Import namespaces
+from azure.ai.vision.face import FaceClient
+from azure.ai.vision.face.models import FaceDetectionModel, FaceRecognitionModel, FaceAttributeTypeDetection01
 
+from azure.core.credentials import AzureKeyCredential
 
 def main():
 
