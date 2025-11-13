@@ -69,7 +69,14 @@ def main():
          100))
 
         # Get objects in the image
-
+        if result.objects is not None:
+            print("\nObjects in image:")
+            for detected_object in result.objects.list:
+                # Print object tag and confidence
+                print(" {} (confidence: {:.2f}%)".format(detected_object.tags[0].name, 
+                    detected_object.tags[0].confidence * 100))
+            # Annotate objects in the image
+            show_objects(image_file, result.objects.list)
 
         # Get people in the image
   
