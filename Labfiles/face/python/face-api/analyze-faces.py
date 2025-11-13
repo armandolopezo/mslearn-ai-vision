@@ -7,7 +7,6 @@ from matplotlib import pyplot as plt
 # Import namespaces
 from azure.ai.vision.face import FaceClient
 from azure.ai.vision.face.models import FaceDetectionModel, FaceRecognitionModel, FaceAttributeTypeDetection01
-
 from azure.core.credentials import AzureKeyCredential
 
 def main():
@@ -34,7 +33,9 @@ def main():
 
 
         # Specify facial features to be retrieved
-
+        features = [FaceAttributeTypeDetection01.HEAD_POSE,
+                    FaceAttributeTypeDetection01.OCCLUSION,
+                    FaceAttributeTypeDetection01.ACCESSORIES]
 
         # Get faces
  
