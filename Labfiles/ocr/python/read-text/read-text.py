@@ -29,13 +29,27 @@ def main():
 
 
         # Authenticate Azure AI Vision client
-
+        cv_client = ImageAnalysisClient(
+            endpoint=ai_endpoint,
+            credential=AzureKeyCredential(ai_key))
         
         # Read text in image
-        
+        with open(image_file, "rb") as f:
+            image_data = f.read()
+        print (f"\nReading text in {image_file}")
+
+        result = cv_client.analyze(
+            image_data=image_data,
+            visual_features=[VisualFeatures.READ])
 
         # Print the text
-        
+        if result.read is not None:
+            print("\nText:")
+            for line in result.read.blocks[0].lines:
+                print(f" {line.text}")        
+            # Annotate the text in the image
+            annotate_lines(image_file, result.read)
+            # Find individual words in each line
 
 
     except Exception as ex:
