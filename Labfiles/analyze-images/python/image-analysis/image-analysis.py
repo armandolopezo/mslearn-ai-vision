@@ -79,7 +79,15 @@ def main():
             show_objects(image_file, result.objects.list)
 
         # Get people in the image
-  
+        if result.people is not None:
+            print("\nPeople in image:")
+            for detected_person in result.people.list:
+                if detected_person.confidence > 0.2:
+                    # Print location and confidence of each person detected
+                    print(" {} (confidence: {:.2f}%)".format(detected_person.bounding_box, 
+        detected_person.confidence * 100))
+            # Annotate people in the image
+            show_people(image_file, result.people.list)
             
         
     except Exception as ex:
