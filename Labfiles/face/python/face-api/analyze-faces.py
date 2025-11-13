@@ -28,7 +28,9 @@ def main():
 
 
         # Authenticate Face client
-
+        face_client = FaceClient(
+            endpoint=cog_endpoint,
+            credential=AzureKeyCredential(cog_key))
 
 
         # Specify facial features to be retrieved
