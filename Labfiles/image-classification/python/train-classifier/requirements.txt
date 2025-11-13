@@ -2,4 +2,3 @@ dotenv
 azure-cognitiveservices-vision-customvision
 
 
-REQUIRE
